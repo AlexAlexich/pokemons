@@ -1,0 +1,27 @@
+<button (click)="loadPokemon()">
+  Load pokemon
+</button>
+<button (click)="loadPokemon2()">Load 2</button>
+
+
+<div *ngIf="isClicked">
+  <app-Loader *ngIf="loading"></app-Loader>
+
+  <div *ngIf="!loading">
+    <h1>{{pokemon.id}} - {{pokemon.name}} </h1>
+    <h2>{{time}}</h2>
+    <button (click)="stopLoading()">
+      stop
+    </button>
+  </div>
+</div>
+
+<div *ngIf="isClicked2">
+  <div *ngIf="!loading2">
+    <h1>{{pokemon2.id}} - {{pokemon2.name}} </h1>
+    <h2>{{time2}}</h2>
+    <button (click)="stopLoading2()">
+      stop
+    </button>
+  </div>
+</div>

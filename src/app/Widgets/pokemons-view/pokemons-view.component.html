@@ -1,0 +1,17 @@
+<app-Loader *ngIf="loading"></app-Loader>
+
+
+<div *ngIf="!loading">
+  <h1>All pokemons</h1>
+  <select [(ngModel)]="pickedPockemon" (ngModelChange)="getBackPokemon()">
+    <option *ngFor="let item of allPokemons">
+      {{item.name}}
+    </option>
+  </select>
+</div>
+<app-Loader *ngIf="showPokemonLoader"></app-Loader>
+<div *ngIf="showPokemon">
+  <h1>{{pokemon.id}} - {{pokemon.name}}</h1>
+  <img src="{{pokemon.photo}}" />
+  <p>{{pokemon.pokeAbility}}</p>
+</div>
